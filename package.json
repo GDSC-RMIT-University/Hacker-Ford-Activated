@@ -1,0 +1,35 @@
+{
+  "name": "hacker-ford-activated",
+  "engines": {
+    "node": ">=0.14"
+  },
+  "version": "1.0.0",
+  "description": "A daring and creative bot who helps students at hackathons!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GDSC-RMIT-University/Hacker-Ford-Activated.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GDSC-RMIT-University/Hacker-Ford-Activated/issues"
+  },
+  "homepage": "https://github.com/GDSC-RMIT-University/Hacker-Ford-Activated#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
+}
