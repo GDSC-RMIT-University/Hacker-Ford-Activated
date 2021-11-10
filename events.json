@@ -1,0 +1,12 @@
+{
+    "events":[
+        {
+            "name":"Pitch Presentation Workshop",
+            "event_datetime": "10/11/2021 10:47:00 PM"
+        },
+        {
+            "name":"Team Building Workshop",
+            "event_datetime": "10/11/2021 10:05:00 PM"
+        }
+    ]
+}

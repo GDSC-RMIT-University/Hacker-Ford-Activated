@@ -1,3 +1,4 @@
+const { sendReminder, parseEventsJson } = require('./reminder.js');
 const Discord = require('discord.js');
 const {Client, Intents} = require('discord.js');
 const {guildId, token} = require('./config.json');
@@ -35,23 +36,25 @@ client.on('messageCreate', message => {
 });
 
 //Reminder Feature
-const ROLE_DEV_CHANNEL_ID = "907410177463042118"
-const CHECK_INTERVAL = 500
-const sendReminder = (channel,message) => {
-    if (channel.isText()) {
-        channel.send(message)
-            .then(console.log("Reminder Sent!"))
-            .catch(console.error);
-    }
-}
+const CHECK_INTERVAL = 1000;
+const ROLE_DEV_CHANNEL_ID = "907410177463042118";
+const MIN_BEFORE_EVENT = 10;
+const TEAM_CHANNEL_IDS = ["907410177463042118"];
 client.once('ready', () => {
     setInterval(() => {
+        events = parseEventsJson();
         var currDate = new Date();
-        if (currDate.getHours() == "0"){
-            client.channels.fetch(ROLE_DEV_CHANNEL_ID)
-                .then(channel => sendReminder(channel,"Testing Reminder"))
-                .catch(console.error);
-        }
+        events.forEach(event => {
+            if (currDate.getHours() === event.event_datetime.getHours() && 
+                currDate.getMinutes() === event.event_datetime.getMinutes() - MIN_BEFORE_EVENT)
+            {
+                TEAM_CHANNEL_IDS.forEach(channel_id => {
+                    client.channels.fetch(channel_id)
+                        .then(channel => sendReminder(channel,`${event.name} starts in ${MIN_BEFORE_EVENT} minutes! 🔥🔥`))
+                        .catch(console.error);
+                })
+            }
+        })
     }, CHECK_INTERVAL)
 })
 
