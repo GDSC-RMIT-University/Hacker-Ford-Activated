@@ -7,6 +7,7 @@ const parseEventsJson = () => {
             event_datetime: new Date(event.event_datetime)
         }
     });
+    console.log(parsedEvents)
     return parsedEvents;
 }
 
@@ -18,5 +19,10 @@ const sendReminder = (channel,message) => {
     }
 }
 
+const mod = (n, m) => {
+    return ((n % m) + m) % m;
+}
+
 exports.parseEventsJson = parseEventsJson;
 exports.sendReminder = sendReminder;
+exports.mod = mod;

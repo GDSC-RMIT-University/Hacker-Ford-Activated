@@ -1,12 +1,76 @@
 {
     "events":[
         {
-            "name":"Pitch Presentation Workshop",
-            "event_datetime": "10/11/2021 10:47:00 PM"
+            "name":"Test Event",
+            "event_datetime": "11/15/2021 10:01:00 PM"
         },
         {
-            "name":"Team Building Workshop",
-            "event_datetime": "10/11/2021 10:05:00 PM"
+            "name":"Opening Ceremony",
+            "event_datetime": "11/20/2021 09:30:00 AM"
+        },
+        {
+            "name":"Commencement of Hacking",
+            "event_datetime": "11/20/2021 10:00:00 AM"
+        },
+        {
+            "name":"Team Building - Kahoot (hosted by SWITCH)",
+            "event_datetime": "11/20/2021 10:15:00 PM"
+        },
+        {
+            "name":"Ideation Workshop & Agile Scrum (hosted by Sam + AIESEC)",
+            "event_datetime": "11/20/2021 10:30:00 PM"
+        },
+        {
+            "name":"Mentoring Window",
+            "event_datetime": "11/20/2021 12:00:00 PM"
+        },
+        {
+            "name":"UX/UI Workshop (hosted by Yianna and Jacqui Shatford)",
+            "event_datetime": "11/20/2021 02:00:00 PM"
+        },
+        {
+            "name":"Software Architecture Workshop",
+            "event_datetime": "11/20/2021 05:00:00 PM"
+        },
+        {
+            "name":"Raffle",
+            "event_datetime": "11/20/2021 07:00:00 PM"
+        },
+        {
+            "name":"Mentoring Window",
+            "event_datetime": "11/20/2021 07:00:00 PM"
+        },
+        {
+            "name":"Presentation Workshop (hosted by Mili + Michael)",
+            "event_datetime": "11/20/2021 08:00:00 PM"
+        },
+        {
+            "name":"Scavenger Hunt (hosted by TPC)",
+            "event_datetime": "11/20/2021 09:00:00 PM"
+        },
+        {
+            "name":"Animal Kingdom (hosted by GDSC)",
+            "event_datetime": "11/21/2021 02:00:00 AM"
+        },
+        {
+            "name":"Presentation Workshop 2: Electric Boogaloo (hosted by Mili)",
+            "event_datetime": "11/21/2021 06:00:00 AM"
+        },
+        {
+            "name":"Mentoring Window",
+            "event_datetime": "11/21/2021 07:00:00 AM"
+        },
+        {
+            "name":"Submission Dealine",
+            "event_datetime": "11/21/2021 10:30:00 AM"
+        },
+        {
+            "name":"Networking Lunch with Mentors",
+            "event_datetime": "11/21/2021 01:00:00 PM"
+        },
+        {
+            "name":"Closing Ceremony",
+            "event_datetime": "11/21/2021 04:00:00 PM"
         }
     ]
 }
