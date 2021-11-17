@@ -38,9 +38,10 @@ client.on('messageCreate', message => {
 //Reminder Feature
 const CHECK_INTERVAL = 60000;
 const MIN_BEFORE_EVENT = 10;
-const TEAM_CHANNEL_IDS = [
-    "895532971501690880","906470785135300638","906471142473207808","906471162547159051","906471191840182282",
-    "906471212375486484","906471238233366548","906471260744212480","906471286463668236","906474205321760770"
+const CHANNEL_IDS = [
+    // "895532971501690880","906470785135300638","906471142473207808","906471162547159051","906471191840182282",
+    // "906471212375486484","906471238233366548","906471260744212480","906471286463668236","906474205321760770"
+    "897009510047158273"
 ]; 
 client.once('ready', () => {
     setInterval(() => {
@@ -54,10 +55,10 @@ client.once('ready', () => {
 
             if (currDate.getHours() === remindHours && currDate.getMinutes() === remindMinute)
             {
-                TEAM_CHANNEL_IDS.forEach(channel_id => {
+                CHANNEL_IDS.forEach(channel_id => {
                     client.channels.fetch(channel_id)
                         .then(channel => sendReminder(channel,
-                            `@${channel.name} ${event.name} is in ${MIN_BEFORE_EVENT} minutes! 🔥🔥`)
+                            `@here ${event.name} is in ${MIN_BEFORE_EVENT} minutes! 🔥🔥`)
                             )
                         .catch(console.error);
                 })
