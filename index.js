@@ -18,23 +18,6 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
-// The bot going a bit nuts whenever someone says a specific word
-client.on('messageCreate', message => {
-
-    if (message.author.bot) return;
-
-    var guild = client.guilds.cache.get(guildId);
-    role = guild.roles.cache.find(r => r.name === "@everyone");
-
-    if(message.content.includes('hi')){
-        message.channel.send('\'sup. ');
-    } else if (message.content.includes('hello')){
-        message.channel.send('How you doin\'?');
-    } else if ( message.mentions.has(client.user)){
-        message.channel.send('How can I help?!');
-    }
-});
-
 //Reminder Feature
 const CHECK_INTERVAL = 60000;
 const MIN_BEFORE_EVENT = 10;
