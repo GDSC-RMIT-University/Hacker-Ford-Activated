@@ -98,6 +98,83 @@ client.on('interactionCreate', async interaction => {
             channel.send('Error sending emojis!');
             throw err;
         }
+
+        const filter = (reaction, user) => {
+            const guild = client.guilds.cache.get(guildId)
+            const permission = guild.members.cache.find((member) => member.id === user.id).permissions.has('ADMINISTRATOR') || //access for admins
+            guild.members.cache.find((member) => member.id === user.id).permissions.has('MANAGE_MESSAGES'); //access for mentors
+
+            if(permission === false){
+                reaction.users.remove(user.id); //Users cannot react if they are not admins nor mentors 
+            }
+            return permission;
+        }
+
+        const collector = reactionMessage.createReactionCollector({
+            filter,
+            time: 1000*100000
+        })
+
+        collector.on('collect', (reaction, user) => {
+            if (reaction.emoji.name === "🔔")
+            {
+                let teamChannelId = '';
+                let teamRole = '';
+                switch(teamNum){
+                    case 1:
+                        teamChannelId = '895532971501690880';
+                        teamRole = '909689031615447051';
+                        break;
+                    case 2:
+                        teamChannelId = '906470785135300638'
+                        teamRole = '909678263545253888';
+                        break;
+                    case 3:
+                        teamChannelId = '906471142473207808'
+                        teamRole = '909678700050649179';
+                        break;
+                    case 4:
+                        teamChannelId = '906471162547159051'
+                        teamRole = '909689493441888287';
+                        break;
+                    case 5:
+                        teamChannelId = '906471191840182282'
+                        teamRole = '909689515130621962';
+                        break;                   
+                    case 6:
+                        teamChannelId = '906471212375486484'
+                        teamRole = '909689539067514900';
+                        break;                        
+                    case 7:
+                        teamChannelId = '906471238233366548'
+                        teamRole = '909690060067184640';
+                        break;                       
+                    case 8:
+                        teamChannelId = '906471260744212480'
+                        teamRole = '909689589080403979';
+                        break;                        
+                    case 9:
+                        teamChannelId = '906471286463668236'
+                        teamRole = '909689618356650005';
+                        break;                        
+                    case 10:
+                        teamChannelId = '906474205321760770'
+                        teamRole = '909689650233352232';
+                        break;    
+                }
+                    
+                if(teamChannelId !== ''){
+                    const teamChannel = client.channels.cache.get(teamChannelId);
+                    teamChannel.send(`<@&${teamRole}>, <@${user.id}> is waiting in the mentoring room NOW!`);
+                } else {
+                    user.send("Invalid team number. Kindly notify the team manually instead.")
+                }
+            } 
+            else if (reaction.emoji.name === "✅")
+            {
+                reactionMessage.delete();
+            }
+        })
     } 
 });
 
