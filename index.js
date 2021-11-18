@@ -208,7 +208,7 @@ client.on('interactionCreate', async interaction => {
     } else if (commandName === 'next'){
         for (var i in parsedEvents){
             // get time now
-            var now = new Date("2021-11-21T17:00:00.00");
+            var now = new Date();
             if (now > new Date("2021-11-21T17:00:00.00")){
                 interaction.reply({
                     content: 'HackVision 2021 has ended! Thank you for coming!'
