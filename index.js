@@ -77,7 +77,13 @@ client.on('interactionCreate', async interaction => {
     const {commandName, options} = interaction;
 
     if (commandName === 'book') {
+        const teamNum = options.getInteger('team_number')
+        const mentor = options.getMentionable('preferred_mentor') || '<@&894440768977109005>' //mention @Mentor
+        const help = options.getString('describe_the_issue')
 
+        interaction.reply({
+            content: `Thank you for booking! 🙌 Your team will get notified once the mentor is available.`
+        })
     } 
 });
 
