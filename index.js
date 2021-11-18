@@ -76,7 +76,7 @@ client.on('interactionCreate', async interaction => {
 
     const {commandName, options} = interaction;
 
-    if (commandName === 'book') {
+    if (commandName == 'book') {
 
     } 
 });
