@@ -84,6 +84,20 @@ client.on('interactionCreate', async interaction => {
         interaction.reply({
             content: `Thank you for booking! 🙌 Your team will get notified once the mentor is available.`
         })
+
+        const channel = client.channels.cache.get('909261789802405909'); //fetch #mentoring-queue channel
+        const line = ('-------------------------------------------');
+        const reactionMessage = await channel.send(`${line}\n**BOOKED!**\n` + 
+        `Team Number: ${teamNum}\nParticipant: <@${interaction.user.id}>\nMentor: ${mentor}\nHelp: ${help}\n` +
+        `> 🔔 - ping the team \n> ✅ - tick when the team is in the mentoring room`);
+
+        try{
+            await reactionMessage.react("🔔");
+            await reactionMessage.react("✅");
+        }catch(err){
+            channel.send('Error sending emojis!');
+            throw err;
+        }
     } 
 });
 
