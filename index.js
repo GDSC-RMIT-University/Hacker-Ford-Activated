@@ -52,6 +52,21 @@ client.once('ready', () => {
             },
         ],
     })
+
+    commands?.create({
+        name: 'help',
+        description: 'Summon the organisers right here, right now!'
+    })
+
+    commands?.create({
+        name: 'info',
+        description: 'Want to know the general info of HackVision 2021?'
+    })
+
+    commands?.create({
+        name: 'next',
+        description: "Check out what\'s next on our schedule!"
+    })
 });
 
 // The bot going a bit nuts whenever someone says a specific word
@@ -175,7 +190,15 @@ client.on('interactionCreate', async interaction => {
                 reactionMessage.delete();
             }
         })
-    } 
+    } else if (commandName === 'help'){
+        interaction.reply({
+            content: 'Hey <@&895533911348748329>, <@' + interaction.user.id + '> needs your help!!'
+        })
+    } else if (commandName === 'info'){
+        interaction.reply({
+            content: 'Check out <#908659472740798464> for the general info of HackVision 2021!'
+        })
+    }
 });
 
 // Login to Discord with your client's token
