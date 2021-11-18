@@ -1,6 +1,13 @@
 const {Client, Intents} = require('discord.js');
 const {guildId, token} = require('./config.json');
 const Discord = require('discord.js');
+const eventsJSON = require('./events.json');
+const parsedEvents = eventsJSON.events.map(event => {
+    return {
+        ...event,
+        event_datetime: new Date(event.event_datetime)
+    }
+});
 
 // Create a new client instance
 const client = new Client({
@@ -198,6 +205,57 @@ client.on('interactionCreate', async interaction => {
         interaction.reply({
             content: 'Check out <#908659472740798464> for the general info of HackVision 2021!'
         })
+    } else if (commandName === 'next'){
+        for (var i in parsedEvents){
+            // get time now
+            var now = new Date("2021-11-21T17:00:00.00");
+            if (now > new Date("2021-11-21T17:00:00.00")){
+                interaction.reply({
+                    content: 'HackVision 2021 has ended! Thank you for coming!'
+                })
+            }
+
+            // get next event
+            var next;
+            if (parsedEvents[i].event_datetime > now){
+                next = parsedEvents[i]
+                break
+            }
+
+        }
+        
+        if (typeof(next) !== "undefined"){
+            // calculate time difference
+            var diff = next.event_datetime - now
+            var time_str = ' ';
+            
+            // calculate hours diff
+            var hours = Math.floor(diff / 1000 / 60 / 60);
+            if (hours > 1){
+                time_str += hours + ' hours '
+            } else if (hours === 1){
+                time_str += hours + ' hour '
+            }
+            diff -= hours * 1000 * 60 * 60;
+            
+            // calculate minute diff
+            var minutes = Math.floor(diff / 1000 / 60);
+            if (minutes > 1){
+                time_str += minutes + ' minutes '
+            } else if (minutes === 1){
+                time_str += minutes + ' minute '
+            }
+
+            interaction.reply({
+                content: 'Next event: ' + next.name + ', coming up in ' + time_str + '!'
+            })
+        
+        } else {
+            interaction.reply({
+                content: 'This is the last event of HackVision 2021.'
+            })
+        }
+        
     }
 });
 
