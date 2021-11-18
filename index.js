@@ -4,8 +4,13 @@ const Discord = require('discord.js');
 
 // Create a new client instance
 const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, 'GUILD_PRESENCES', 'GUILD_MEMBERS', 'GUILD_MESSAGES',
-        'DIRECT_MESSAGES', Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS]
+    intents: [Intents.FLAGS.GUILDS, 
+        'GUILD_PRESENCES', 
+        'GUILD_MEMBERS', 
+        'GUILD_MESSAGES',
+        'DIRECT_MESSAGES', 
+        Intents.FLAGS.GUILD_MESSAGES, 
+        Intents.FLAGS.GUILD_MESSAGE_REACTIONS]
 });
 
 var role = ''
