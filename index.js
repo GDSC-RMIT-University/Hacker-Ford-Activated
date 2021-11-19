@@ -116,16 +116,6 @@ client.once('ready', () => {
     }, CHECK_INTERVAL)
 })
 
-client.on('interactionCreate', async (interaction) => {
-	if (!interaction.isCommand()) return;
-
-    const { commandName, options } = interaction
-
-    if (commandName === 'book'){
-
-    }
-});
-
 client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
 
