@@ -24,11 +24,11 @@ Concept design by the ever creative Chaamudi Kodikara.
     npm i
     npm install -g forever
 
-    forever start index.js
+    forever start --uid hacker-ford index.js
     forever list
-    forever stop id
+    forever stop hacker-ford
    
     // Restart
     git pull
-    forever start index.js
+    forever start --uid hacker-ford index.js
    ```
