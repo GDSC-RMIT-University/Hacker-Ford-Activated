@@ -160,7 +160,47 @@ client.on('interactionCreate', async interaction => {
                     case 10:
                         teamChannelId = '906474205321760770'
                         teamRole = '909689650233352232';
-                        break;    
+                        break;  
+                    case 11:
+                        teamChannelId = '911196812717731851';
+                        teamRole = '911197439434821642';
+                        break;
+                    case 12:
+                        teamChannelId = '911196843923370084'
+                        teamRole = '911197621681541140';
+                        break;
+                    case 13:
+                        teamChannelId = '911196871421206569'
+                        teamRole = '911197786660294656';
+                        break;
+                    case 14:
+                        teamChannelId = '911196901825732608'
+                        teamRole = '911197881044697118';
+                        break;
+                    case 15:
+                        teamChannelId = '911196935422115861'
+                        teamRole = '911198022468239390';
+                        break;                   
+                    case 16:
+                        teamChannelId = '911196995669065748'
+                        teamRole = '911198112566091806';
+                        break;                        
+                    case 17:
+                        teamChannelId = '911197024152596480'
+                        teamRole = '911198338278391818';
+                        break;                       
+                    case 18:
+                        teamChannelId = '911197054443864135'
+                        teamRole = '911198416770584606';
+                        break;                        
+                    case 19:
+                        teamChannelId = '911197157267222528'
+                        teamRole = '911198503085150219';
+                        break;                        
+                    case 20:
+                        teamChannelId = '911197207456260116'
+                        teamRole = '911198565139906610';
+                        break;   
                 }
                     
                 if(teamChannelId !== ''){
