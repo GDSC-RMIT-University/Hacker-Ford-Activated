@@ -1,76 +1,84 @@
 {
-    "events":[
-        {
-            "name":"Test Event",
-            "event_datetime": "11/15/2021 10:01:00 PM"
-        },
-        {
-            "name":"Opening Ceremony",
-            "event_datetime": "11/20/2021 09:30:00 AM"
-        },
-        {
-            "name":"Commencement of Hacking",
-            "event_datetime": "11/20/2021 10:00:00 AM"
-        },
-        {
-            "name":"Team Building - Kahoot (hosted by SWITCH)",
-            "event_datetime": "11/20/2021 10:15:00 PM"
-        },
-        {
-            "name":"Ideation Workshop & Agile Scrum (hosted by Sam + AIESEC)",
-            "event_datetime": "11/20/2021 10:30:00 PM"
-        },
-        {
-            "name":"Mentoring Window",
-            "event_datetime": "11/20/2021 12:00:00 PM"
-        },
-        {
-            "name":"UX/UI Workshop (hosted by Yianna and Jacqui Shatford)",
-            "event_datetime": "11/20/2021 02:00:00 PM"
-        },
-        {
-            "name":"Software Architecture Workshop",
-            "event_datetime": "11/20/2021 05:00:00 PM"
-        },
-        {
-            "name":"Raffle",
-            "event_datetime": "11/20/2021 07:00:00 PM"
-        },
-        {
-            "name":"Mentoring Window",
-            "event_datetime": "11/20/2021 07:00:00 PM"
-        },
-        {
-            "name":"Presentation Workshop (hosted by Mili + Michael)",
-            "event_datetime": "11/20/2021 08:00:00 PM"
-        },
-        {
-            "name":"Scavenger Hunt (hosted by TPC)",
-            "event_datetime": "11/20/2021 09:00:00 PM"
-        },
-        {
-            "name":"Animal Kingdom (hosted by GDSC)",
-            "event_datetime": "11/21/2021 02:00:00 AM"
-        },
-        {
-            "name":"Presentation Workshop 2: Electric Boogaloo (hosted by Mili)",
-            "event_datetime": "11/21/2021 06:00:00 AM"
-        },
-        {
-            "name":"Mentoring Window",
-            "event_datetime": "11/21/2021 07:00:00 AM"
-        },
-        {
-            "name":"Submission Dealine",
-            "event_datetime": "11/21/2021 10:30:00 AM"
-        },
-        {
-            "name":"Networking Lunch with Mentors",
-            "event_datetime": "11/21/2021 01:00:00 PM"
-        },
-        {
-            "name":"Closing Ceremony",
-            "event_datetime": "11/21/2021 04:00:00 PM"
-        }
-    ]
+  "events": [
+    {
+      "name": "Opening Ceremony",
+      "event_link": "https://gdsc.community.dev/e/mcpbrj/",
+      "event_datetime": "11/20/2021 09:30:00 AM"
+    },
+    {
+      "name": "Commencement of Hacking",
+      "event_link": "<#894439113959305256>",
+      "event_datetime": "11/20/2021 10:00:00 AM"
+    },
+    {
+      "name": "Team Building - Kahoot (hosted by SWITCH)",
+      "event_link": "https://gdsc.community.dev/e/mzyn7y/",
+      "event_datetime": "11/20/2021 10:15:00 AM"
+    },
+    {
+      "name": "Ideation Workshop & Agile Scrum (hosted by Sam Nolan and AIESEC)",
+      "event_link": "https://gdsc.community.dev/e/mm3d4g/",
+      "event_datetime": "11/20/2021 10:30:00 AM"
+    },
+    {
+      "name": "Mentoring Window",
+      "event_link": "<#906471497055473684>",
+      "event_datetime": "11/20/2021 12:00:00 PM"
+    },
+    {
+      "name": "Design (UX/UI) Workshop (hosted by Yianna Paris and Jacqui Shadforth)",
+      "event_link": "https://gdsc.community.dev/e/mbmvrd/",
+      "event_datetime": "11/20/2021 02:00:00 PM"
+    },
+    {
+      "name": "Software Architecture Workshop (hosted by Tom Frantz and Louis Stekhoven-Smith)",
+      "event_link": "https://gdsc.community.dev/e/mcwwaz/",
+      "event_datetime": "11/20/2021 05:00:00 PM"
+    },
+    {
+      "name": "Raffle",
+      "event_link": "<#897009510047158273>",
+      "event_datetime": "11/20/2021 07:00:00 PM"
+    },
+    {
+      "name": "Mentoring Window",
+      "event_link": "<#906471497055473684>",
+      "event_datetime": "11/20/2021 07:00:00 PM"
+    },
+    {
+      "name": "Presentation Workshop (hosted by Milindi Kodikara and Michael Swiatkiwsky)",
+      "event_link": "https://gdsc.community.dev/e/mwznex/",
+      "event_datetime": "11/20/2021 08:00:00 PM"
+    },
+    {
+      "name": "Scavenger Hunt (hosted by TPC)",
+      "event_link": "https://gdsc.community.dev/e/mj46w9/",
+      "event_datetime": "11/20/2021 09:00:00 PM"
+    },
+    {
+      "name": "Animal Kingdom (hosted by GDSC RMIT)",
+      "event_link": "https://gdsc.community.dev/e/myvs9e/",
+      "event_datetime": "11/21/2021 02:00:00 AM"
+    },
+    {
+      "name": "Mentoring Window",
+      "event_link": "<#906471497055473684>",
+      "event_datetime": "11/21/2021 07:00:00 AM"
+    },
+    {
+      "name": "Submission Deadline",
+      "event_link": "https://hackvision-2021.devpost.com/",
+      "event_datetime": "11/21/2021 10:30:00 AM"
+    },
+    {
+      "name": "Networking Lunch with Mentors, Judges and all of you!",
+      "event_link": "https://gdsc.community.dev/e/mrauqh/",
+      "event_datetime": "11/21/2021 01:00:00 PM"
+    },
+    {
+      "name": "Closing Ceremony",
+      "event_link": "https://gdsc.community.dev/e/m5xwmk/",
+      "event_datetime": "11/21/2021 04:00:00 PM"
+    }
+  ]
 }
