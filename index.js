@@ -1,18 +1,17 @@
-const { sendReminder, parseEventsJson, mod } = require('./reminder.js');
+const {sendReminder, parseEventsJson, mod} = require('./reminder.js');
 const Discord = require('discord.js');
 const {Client, Intents} = require('discord.js');
 const {guildId, token} = require('./config.json');
+const cron = require('cron');
 
 // Create a new client instance
 const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, 
+    intents: [Intents.FLAGS.GUILDS,
         'GUILD_PRESENCES', 'GUILD_MEMBERS', 'GUILD_MESSAGES',
         'DIRECT_MESSAGES', 
         Intents.FLAGS.GUILD_MESSAGES,
         Intents.FLAGS.GUILD_MESSAGE_REACTIONS]
 });
-
-var role = ''
 
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
@@ -53,50 +52,63 @@ client.once('ready', () => {
     })
 });
 
-// The bot going a bit nuts whenever someone says a specific word
-client.on('messageCreate', message => {
-
-    if (message.author.bot) return;
-
-    var guild = client.guilds.cache.get(guildId);
-    role = guild.roles.cache.find(r => r.name === "@everyone");
-
-    if(message.content.includes('hi')){
-        message.channel.send('\'sup. ');
-    } else if (message.content.includes('hello')){
-        message.channel.send('How you doin\'?');
-    } else if ( message.mentions.has(client.user)){
-        message.channel.send('How can I help?!');
-    }
-});
-
 //Reminder Feature
 const CHECK_INTERVAL = 60000;
 const MIN_BEFORE_EVENT = 10;
 const CHANNEL_IDS = [
-    // "895532971501690880","906470785135300638","906471142473207808","906471162547159051","906471191840182282",
-    // "906471212375486484","906471238233366548","906471260744212480","906471286463668236","906474205321760770"
     "897009510047158273"
-]; 
+];
+
 client.once('ready', () => {
     setInterval(() => {
         events = parseEventsJson();
         var currDate = new Date();
         events.forEach(event => {
             const remindMinute = mod(event.event_datetime.getMinutes() - MIN_BEFORE_EVENT, 60)
-            let remindHours = event.event_datetime.getHours()
-            if(remindMinute != event.event_datetime.getMinutes() - MIN_BEFORE_EVENT)
-                remindHours -= 1
+            let eventHours = event.event_datetime.getHours()
+            var eventDate = event.event_datetime.getDate()
+            var eventMonth = event.event_datetime.getMonth()
+            var eventYear = event.event_datetime.getFullYear()
 
-            if (currDate.getHours() === remindHours && currDate.getMinutes() === remindMinute)
-            {
+            if (remindMinute != event.event_datetime.getMinutes() - MIN_BEFORE_EVENT)
+                eventHours -= 1
+
+            if (currDate.getMonth() === eventMonth && currDate.getDate() === eventDate &&
+                currDate.getFullYear() === eventYear && currDate.getHours() === eventHours
+                && currDate.getMinutes() === remindMinute) {
                 CHANNEL_IDS.forEach(channel_id => {
                     client.channels.fetch(channel_id)
                         .then(channel => sendReminder(channel,
-                            `@here ${event.name} is in ${MIN_BEFORE_EVENT} minutes! 🔥🔥`)
-                            )
+                            `@here ${event.name} is in ${MIN_BEFORE_EVENT} minutes 🔥🔥`)
+                        )
                         .catch(console.error);
                 })
+            }
+
+            // Make announcement to announcement channel
+            if (currDate.getMonth() === eventMonth && currDate.getDate() === eventDate &&
+                currDate.getFullYear() === eventYear && currDate.getHours() === eventHours &&
+                currDate.getMinutes() === event.event_datetime.getMinutes()) {
+
+                console.log("Inside announcements\n")
+
+                var guild = client.guilds.cache.get(guildId);
+                role = guild.roles.cache.find(r => r.name === "@everyone");
+
+                const hackEmbed = new Discord.MessageEmbed()
+                    .setTitle(`Agenda Item: ${event.name}`)
+                    .setDescription(`\nWhere: ${event.event_link}\nWhen: ${event.event_datetime}\n **YEAH, IT'S NOW**❗`)
+                    .setColor("#34a853");
+
+                client.channels.cache.get('895532494856798238').send({
+                    embeds: [hackEmbed],
+                    content: `Oi ${role.name} getcho butts over here now 🔥`
+                })
+                    .then(sentMessage => {
+                        sentMessage.react('🔥');
+                        sentMessage.react('⏰');
+                        sentMessage.react('🔺')
+                    });
             }
         })
     }, CHECK_INTERVAL)
