@@ -89,7 +89,8 @@ client.once('ready', () => {
         var currDate = new Date();
         events.forEach(event => {
             const remindMinute = mod(event.event_datetime.getMinutes() - MIN_BEFORE_EVENT, 60)
-            let eventHours = event.event_datetime.getHours()
+            var eventMinutes = event.event_datetime.getMinutes()
+            var eventHours = event.event_datetime.getHours()
             var eventDate = event.event_datetime.getDate()
             var eventMonth = event.event_datetime.getMonth()
             var eventYear = event.event_datetime.getFullYear()
@@ -112,7 +113,7 @@ client.once('ready', () => {
             // Make announcement to announcement channel
             if (currDate.getMonth() === eventMonth && currDate.getDate() === eventDate &&
                 currDate.getFullYear() === eventYear && currDate.getHours() === eventHours &&
-                currDate.getMinutes() === event.event_datetime.getMinutes()) {
+                currDate.getMinutes() === eventMinutes) {
 
                 console.log("Inside announcements\n")
 
