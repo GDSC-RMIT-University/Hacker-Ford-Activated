@@ -2,7 +2,6 @@ const {sendReminder, parseEventsJson, mod} = require('./reminder.js');
 const Discord = require('discord.js');
 const {Client, Intents} = require('discord.js');
 const {guildId, token} = require('./config.json');
-const Discord = require('discord.js');
 const eventsJSON = require('./events.json');
 const parsedEvents = eventsJSON.events.map(event => {
     return {
