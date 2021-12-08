@@ -6,9 +6,6 @@ A daring and creative bot who helps students smoothly hack away at hackathons!
 
 P.S When Aster feels like they're up for a challenge, they go by the name Hacker Ford 😈
 
-Image by the fabulously talented Isaac Chuah Yi Jie.
-Concept design by the ever creative Chaamudi Kodikara.
-
 ### Main Features
 1. Send announcements and reminders of the mini-events/games and updates on the hacking timeline;
 2. Booking system for mentoring sessions on discord voice channels;
@@ -36,3 +33,11 @@ Concept design by the ever creative Chaamudi Kodikara.
     git pull
     forever start --uid hacker-ford index.js
    ```
+
+### Contributors
+Code by the fiery [Milindi Kodikara](https://github.com/Milindi-Kodikara), brainy [Sheryl Mantik](https://github.com/shuhreel), 
+curious [Jacqueline Ann Lim](https://github.com/jacqueline-ann-lim-s3753072) and fabulous [Isaac Chuah Yi Jie](https://github.com/perrywink);
+
+Image by the fabulous [Isaac Chuah Yi Jie](https://github.com/perrywink);
+
+Concept design by the ever creative [Chaamudi Kodikara](https://github.com/ChaamudiK);
